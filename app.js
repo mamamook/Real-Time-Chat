@@ -33,6 +33,7 @@ io.on("connection", socket =>{
         io.sockets.emit("receive_message", {message: data.message, username: socket.username})
     })
 
+
     socket.on('typing', data =>{
         //boardcast when a user connect
         socket.broadcast.emit('typing', {username: socket.username})
